@@ -131,7 +131,7 @@ I found no independent review or side-by-side test that judges these vendors on 
 ## 3. Pricing, credits and effective cost per clip
 
 ### Takeaway
-On verified numbers, Google is the cheapest in scope: about $0.20 per Veo 3.1 Lite clip and $0.30 per 5-second Omni Flash clip on the $19.99 Google AI Pro plan, or roughly $2.40 to $5.76 for a finished 30-second video under the 12-generation assumption. Luma Ray3.2 matches that only at 720p ($0.30 per 5 seconds on the $30 plan); Runway Gen-4.5 costs about $0.93 to $1.44 per 5 seconds and its $15 plan cannot cover one such video.
+Among vendors with officially sourced prices, Google is the cheapest: about $0.20 per Veo 3.1 Lite clip and $0.30 per 5-second Omni Flash clip on the $19.99 Google AI Pro plan, or roughly $2.40 to $5.76 for a finished 30-second video under the 12-generation assumption. Luma Ray3.2 matches that only at 720p ($0.30 per 5 seconds on the $30 plan); Runway Gen-4.5 costs about $0.93 to $1.44 per 5 seconds and its $15 plan cannot cover one such video. Midjourney may be cheaper still per clip, but its figures are third-party and its video specs are unverified.
 
 ### Cited Findings
 
@@ -224,10 +224,10 @@ All figures below are my arithmetic on the cited numbers. "30-s video" = 12 gene
 |---|---|---|---|---|---|
 | Standard, monthly $15 | $0.0240 | $1.44 | $2.88 | $27.65 | 0.5 (625 credits = 52 s) |
 | Standard, annual $12/mo ($144/yr) | $0.0192 | $1.15 | $2.30 | $22.12 | 0.5 |
-| Pro, monthly $35 | $0.0156 | $0.93 | $1.87 | $17.92 | 1.9 |
-| Pro, annual $28/mo ($336/yr) | $0.0124 | $0.75 | $1.49 | $14.34 | 1.9 |
-| Max, monthly $95 | $0.0100 | $0.60 | $1.20 | $11.52 | 8.2 |
-| Max, annual $76/mo ($912/yr) | $0.0080 | $0.48 | $0.96 | $9.22 | 8.2 |
+| Pro, monthly $35 | $0.0156 | $0.93 | $1.87 | $17.92 | about 2 (2,250 credits = 187 s) |
+| Pro, annual $28/mo ($336/yr) | $0.0124 | $0.75 | $1.49 | $14.34 | about 2 |
+| Max, monthly $95 | $0.0100 | $0.60 | $1.20 | $11.52 | about 8 (9,500 credits = 792 s) |
+| Max, annual $76/mo ($912/yr) | $0.0080 | $0.48 | $0.96 | $9.22 | about 8 |
 | API at $0.01 per credit (third-party figure) | $0.0100 | $0.60 | $1.20 | $11.52 | n/a |
 
 - With 10-second shots (120 generated seconds) the 30-s video needs 1,440 credits: $34.56 on Standard monthly, $22.40 on Pro monthly.
