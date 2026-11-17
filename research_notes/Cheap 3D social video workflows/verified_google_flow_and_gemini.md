@@ -1,10 +1,10 @@
 # Google Flow, the Gemini app and Nano Banana: verified cost and limits as of 17 November 2026
 
 > **Read this first: how these notes were made.**
-> 1. This is the second, verification round for the Google route. I opened Google's own pages directly (about 80 page loads on `support.google.com`, `gemini.google` and `labs.google`) on **17 November 2026** and read the full text and tables, not search snippets.
+> 1. This is the second, verification round for the Google route. I opened Google's own pages directly (about 80 page loads on `support.google.com`, `gemini.google`, `labs.google` and, for API prices, `cloud.google.com`) on **17 November 2026** and read the full text and tables, not search snippets.
 > 2. **Evidence tags.** `READ DIRECTLY 17 Nov 2026` = I read the linked page itself on that date. `SEARCH SUMMARY` = a web-search summary only; the page was not opened (11 searches used, only for things the readable hosts did not answer). Each search returns one summary covering about ten pages, so for SEARCH SUMMARY items I link the most likely source page or pages.
 > 3. **Verdict words** compare with the first-round file `first_party_video_models_western.md`: **Confirms**, **Corrects**, **Contradicts**, or **New** (not in the first round).
-> 4. **Hosts I could not read** (blocked by network policy): `flow.google.com` (the Flow product and its pricing page; `labs.google/fx/tools/flow` now redirects there), `one.google.com`, `policies.google.com`, `blog.google`, and `ai.google.dev` (redirects to `aistudio.google.com`). Figures that live only on those pages are SEARCH SUMMARY or listed under Gaps.
+> 4. **Hosts I could not read** (blocked by network policy): `flow.google.com` (the Flow product and its pricing page; `labs.google/fx/tools/flow` now redirects there), `one.google.com`, `policies.google.com`, `blog.google`, and `ai.google.dev` (redirects to `aistudio.google.com`). Figures that live only on those pages are SEARCH SUMMARY or listed under Gaps. Google's API prices were read from the Google Cloud price list instead (section 11).
 > 5. Google's help pages show no "last updated" date in their page source, so I can give the date read but not the date written. Google states on the pages that credit costs and limits can change at any time.
 > 6. Saved copies of every page (raw HTML and extracted text) are in the session scratch folder `/tmp/claude-0/-home-user-Ivaylo/58e18699-43b7-519e-878f-a17fb3cfeb75/scratchpad/google_route/` (temporary; it may be cleared).
 >
@@ -31,6 +31,8 @@
 > | Gap: EU/EEA and UK availability | **Answered** | Flow lists all 27 EU states, Iceland, Liechtenstein, Norway, Switzerland and the UK. Two features are off there: editing uploaded videos, and avatars. |
 > | Unverified lead: visible watermark on plans below Ultra | **Out of date** | See the watermark row above. |
 > | Gap: status of Whisk | **Answered (partly)** | `labs.google/fx/tools/whisk` now redirects to `flow.google.com/?from=whisk`. |
+> | API prices per second: Veo 3.1 Lite $0.05 / $0.08, Fast $0.10 / $0.12 / $0.30, Standard $0.40 / $0.60 | **Confirms (on Google Cloud)** | Google Cloud's price list shows the same numbers, and still lists all three Veo 3.1 tiers. It also prices Gemini Omni 1.2 Flash, which works out to about $0.07 per second at 720p. |
+> | Third-party: Veo can no longer be called from the API after 22 October 2026 | **Not supported for Google Cloud** | Veo 3.1, 3.1 Fast and 3.1 Lite are all on Google Cloud's live price list. The Gemini Developer API page could not be opened, so its status is still unchecked. |
 
 ## 1. Flow credit cost per generation (video models, edits, extensions, upscaling, images)
 
@@ -266,7 +268,7 @@ It is true: on 5 December 2026 Flow retires Veo 3.1 Fast, Veo 3.1 Quality and Om
 - With three Omni Flash versions and two retirements inside one year, any workflow or price in this file may change again. Re-check the Flow credits page before committing to a plan.
 
 ### Gaps
-- Whether Veo 3.1 Fast and Quality stay available outside Flow (API, Vertex AI) after 5 December. I could not open the Gemini API pricing page; see section 11 for the search-summary figures.
+- Whether Veo 3.1 Fast and Quality stay available outside Flow after 5 December. On 17 November 2026 Google Cloud's price list still carries Veo 3.1, Veo 3.1 Fast and Veo 3.1 Lite with no retirement note (section 11), but that page says nothing about the future, and the Gemini Developer API page could not be opened.
 - No Google page I read mentions a Veo 4 or a successor to Veo 3.1 Lite.
 
 ## 7. Gemini app: video and image generation limits per plan
@@ -398,7 +400,12 @@ Verified inputs used below (all restated from sections 1 and 2):
 - 50 daily credits for everyone; monthly credits of 200 (AI Plus) and 1,000 (AI Pro); no rollover. — READ DIRECTLY 17 Nov 2026: [Flow Help: Manage your Google Flow credits](https://support.google.com/flow/answer/16526234?hl=en)
 - US prices: AI Plus $4.99 and AI Pro $19.99 a month. — READ DIRECTLY 17 Nov 2026: [Gemini subscriptions page (US)](https://gemini.google/subscriptions/)
 - Top-up credits at $25 per 2,500 (Pro and Ultra only). — SEARCH SUMMARY: [Google One Help: Purchase Google AI credits (search-indexed version)](https://support.google.com/googleone/answer/17103110?hl=en-MY)
-- Gemini API comparison prices: Gemini Omni 1.2 Flash at $0.07 per second at 720p (announced 5 November 2026, a 30% cut); Veo 3.1 Lite listed at $0.05 per second at 720p in a September 2026 snapshot, with one source saying the Veo 3.1 Preview line was shut down on 22 October 2026. I could not open Google's API pricing page, so the first-round API table remains unverified. — SEARCH SUMMARY: [FourWeekMBA](https://fourweekmba.com/ai-google-cuts-gemini-omni-video-price-30-to-0-07-a-second/); [Tech Insider](https://tech-insider.org/gemini-omni-1-2-flash-15-second-video-30-percent-price-cut-2026/); [benchlm.ai](https://benchlm.ai/media-pricing/veo)
+
+**Google's direct API prices (Google Cloud price list, page titled "Agent Platform Pricing"; this is the Vertex AI list, not the Gemini Developer API list, which could not be opened)**
+- Veo, video with audio, price "per 1 count": Veo 3.1 Lite $0.05 at 720p and $0.08 at 1080p; Veo 3.1 Fast $0.10 at 720p, $0.12 at 1080p, $0.30 at 4K; Veo 3.1 $0.40 at 720p or 1080p and $0.60 at 4K. Without audio: Lite $0.03 (720p) and $0.05 (1080p); Fast $0.08, $0.10 and $0.25; Veo 3.1 $0.20 and $0.40 (4K). **Confirms** every first-round API figure. The page does not spell out the unit of a "count"; the first-round Gemini API figures and its billing report ($0.40 for an 8-second Lite clip) show it is one second. All three Veo 3.1 tiers are still listed, which **does not support** the third-party claim that Veo left the API on 22 October 2026, at least for Google Cloud. — READ DIRECTLY 17 Nov 2026: [Google Cloud: Agent Platform Pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing)
+- Gemini Omni 1.2 Flash: video output $12.00 per 1 million tokens; input $1.50 per 1 million tokens. Omni 1.1 Flash: video output $17.50 per 1 million tokens. Output with audio is charged at 1,931 tokens per second at 360p, 5,792 at 720p, 8,688 at 1080p and 17,376 at 4K. Upscaling output costs 2,896 tokens per second for 360p to 720p or 720p to 1080p, 5,792 for 360p to 1080p, and 11,584 to reach 4K. **New.** — READ DIRECTLY 17 Nov 2026: [Google Cloud: Agent Platform Pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing)
+- Nano Banana image prices per output image (standard tier), as stated in the page's footnotes: Nano Banana 2.1 about $0.034 at 1K, $0.05 at 2K, $0.113 at 4K; Nano Banana 2 Lite (Gemini 3.1 Flash-Lite Image) about $0.034 at 1K; Nano Banana 2 (Gemini 3.1 Flash Image) about $0.045 at 512 px, $0.067 at 1K, $0.101 at 2K, $0.15 at 4K; Nano Banana Pro (Gemini 3 Pro Image) about $0.134 at 1K or 2K and $0.24 at 4K. The Flex/Batch tier is half these rates (Nano Banana 2.1 has no Flex). Input images are charged at 1,120 tokens each (560 for Pro). **New.** — READ DIRECTLY 17 Nov 2026: [Google Cloud: Agent Platform Pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing)
+- Corroboration from search: Gemini Omni 1.2 Flash at $0.07 per second at 720p on the Gemini API, announced 5 November 2026 as a 30% cut; one source lists video output at $12 per million tokens, down from $17.50. One source says the Veo 3.1 Preview line on the Gemini API was shut down on 22 October 2026. — SEARCH SUMMARY: [FourWeekMBA](https://fourweekmba.com/ai-google-cuts-gemini-omni-video-price-30-to-0-07-a-second/); [Tech Insider](https://tech-insider.org/gemini-omni-1-2-flash-15-second-video-30-percent-price-cut-2026/); [benchlm.ai](https://benchlm.ai/media-pricing/veo)
 
 ### Inferences
 Everything in this subsection is my arithmetic on the verified inputs above.
@@ -440,7 +447,21 @@ Everything in this subsection is my arithmetic on the verified inputs above.
 - Top-up route (AI Pro or Ultra only, if the search-summary price of $0.01 per credit still holds): $0.10 per Veo 3.1 Lite clip, $0.24 per Omni 720p clip, $0.08 per Omni 360p clip; a finished video costs $1.20, $2.88 or $0.96. Top-up credits are half the price of AI Pro's bundled credits, but the smallest pack is $25.
 - Until 5 December 2026 only, on AI Pro: Omni Flash 1.1 at 720p is $0.24 per 8-s clip and $2.88 per finished video; Veo 3.1 Fast is $0.40 and $4.80; Veo 3.1 Quality is $2.00 per clip, and a finished video needs 1,200 credits ($23.99), more than the whole monthly allowance.
 - AI Ultra for reference: Veo 3.1 Lite costs 5 credits, so $0.05 per clip and $0.60 per finished video on the $99.99 tier.
-- Per-second view at 720p: Omni Flash 1.2 in Flow costs about $0.06 per second on AI Pro credits and $0.075 on AI Plus credits, against $0.07 per second on the Gemini API (search summary). Veo 3.1 Lite in Flow costs about $0.025 per second for an 8-second clip on AI Pro.
+- Per-second view at 720p: Omni Flash 1.2 in Flow costs about $0.06 per second on AI Pro credits and $0.075 on AI Plus credits, against about $0.07 per second on Google Cloud (5,792 tokens at $12 per million = $0.0695). Veo 3.1 Lite in Flow costs about $0.025 per second for an 8-second clip on AI Pro, half the Google Cloud rate of $0.05.
+- The same job through Google's API (Google Cloud list prices, my arithmetic; no free allowance, pay per use):
+
+| Model and resolution | Per second | 8-second clip | Finished 30-second video (12 generations) |
+|---|---|---|---|
+| Veo 3.1 Lite, 720p with audio | $0.05 | $0.40 | $4.80 |
+| Veo 3.1 Lite, 1080p with audio | $0.08 | $0.64 | $7.68 |
+| Veo 3.1 Fast, 720p / 1080p with audio | $0.10 / $0.12 | $0.80 / $0.96 | $9.60 / $11.52 |
+| Veo 3.1, 720p or 1080p with audio | $0.40 | $3.20 | $38.40 |
+| Gemini Omni 1.2 Flash, 360p | about $0.023 | about $0.19 | about $2.22 |
+| Gemini Omni 1.2 Flash, 720p | about $0.070 | about $0.56 | about $6.67 |
+| Gemini Omni 1.2 Flash, 1080p | about $0.104 | about $0.83 | about $10.01 |
+
+- This **confirms** the first-round API table for Veo. For a solo creator the API is the dearer route: a Veo 3.1 Lite video costs $4.80 by API against $2.40 on AI Pro credits or $0 on free daily credits, and upscaling an Omni clip from 360p to 1080p costs about $0.07 per second by API but 0 credits for a Flow subscriber. The API's one advantage is native 1080p for Veo 3.1 Lite.
+- Keyframes by API would cost about $0.03 to $0.13 per image depending on model and size. Inside Flow the same models cost nothing within the daily limits, so the API is not needed for stills.
 - Sensitivity: the 12-generation assumption drives every figure. One generation per shot cuts costs to a third; five per shot raises them by two thirds.
 - Stills: keyframes made with Nano Banana inside Flow add $0, within the daily image limits in section 1.
 
@@ -453,5 +474,6 @@ Everything in this subsection is my arithmetic on the verified inputs above.
 - The order in which daily and monthly credits are spent is unknown, which slightly affects the "with daily credits" counts for subscribers.
 - The real number of generations per usable shot for stylised 3D looks is untested; 3 is an assumption carried over from the first round.
 - The Gemini app's video allowance cannot be costed because Google publishes no quantity.
-- Gemini API prices could not be read directly; the first-round API table is neither confirmed nor corrected here.
+- The Gemini Developer API price page (`ai.google.dev`) could not be read directly. The API figures here come from Google Cloud's price list; the two lists matched for Veo in the first round, but I could not check that they still match, or whether the Developer API still offers Veo.
+- Google Cloud's page gives Veo prices "per 1 count" without defining the unit. I read it as one second, based on the matching first-round figures.
 - Quality of Veo 3.1 Lite and Omni Flash 1.2 for Pixar-like, clay, toy or isometric looks is not addressed by any Google page read. It needs a hands-on test, which the free daily credits allow at no cost.
